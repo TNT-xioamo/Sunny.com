@@ -8,7 +8,7 @@ subtitle:
 description:
 keywords:
 author: John Doe
-language:
+# language:
 timezone:
 
 # URL
@@ -73,8 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
-
+theme: fluid  # 指定主题
+language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
