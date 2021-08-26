@@ -446,7 +446,7 @@ index:
 
       # 请求地址
       # Request url
-      url: "http://api.btstu.cn/yan/api.php?encode=json"
+      url: "https://api.btstu.cn/yan/api.php?encode=json"
 
       # 请求方法
       # Request method
