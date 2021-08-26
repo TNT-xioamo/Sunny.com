@@ -11,14 +11,26 @@ Fluid.plugins = {
   typing: function(text) {
     if (!window.Typed) { return; }
 
-    var typed = new window.Typed('#subtitle', {
+    const typed = new window.Typed('#subtitle', {
       strings: [
-        '  ',
+        '',
         text + '&nbsp;'
       ],
       cursorChar: CONFIG.typing.cursorChar,
       typeSpeed : CONFIG.typing.typeSpeed,
-      loop      : CONFIG.typing.loop
+      loop      : CONFIG.typing.loop,
+      backDelay : CONFIG.typing.backDelay,
+      smartBackspace: CONFIG.typing.loop.smartBackspace,
+      backSpeed: CONFIG.typing.loop.backSpeed,
+      onLastStringBackspaced: ()=> {
+        typed.stop();
+        const nodesCursor = $('.typed-cursor')[0]
+        if (nodesCursor != null) {
+          nodesCursor.parentNode.removeChild(nodesCursor);
+        }
+        typed.destroy();
+        ajaxRequest();
+      }
     });
     typed.stop();
     var subtitle = document.getElementById('subtitle');
