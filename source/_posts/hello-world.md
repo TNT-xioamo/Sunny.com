@@ -239,3 +239,12 @@ title: canvas 笔记
   // 填充不规则图形
   ctx.fill()
   ```
+### 4.2 绘制圆弧
+
+  ```js
+    arc(x, y, radius, startAngle, endAngle, anticlockwise)
+  ```
+  - x,y 为绘制圆弧所在圆上的圆心坐标
+  - radius 为半径
+  - startAngle 以及 endAngle 参数用弧度定义了开始以及结束的弧度。这些都是以 x 轴为基准
+  - 参数 anticlockwise 为一个布尔值。为 true 时，是逆时针方向，否则顺时针方向。
