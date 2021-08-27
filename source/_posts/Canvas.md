@@ -1,5 +1,9 @@
 ---
 title: canvas 笔记
+tags: [前端, 动画]
+index_img: /article-img/canvas.jpg
+categories: 前端
+date: 2021-03-26
 ---
 
 
