@@ -24,7 +24,7 @@ class Circle {
 }
 
 class Boom {
-  constructor ({ origin, context, circleCount = 16, area }) {
+  constructor ({ origin, context, circleCount = 25, area }) {
     this.origin = origin
     this.context = context
     this.circleCount = circleCount
