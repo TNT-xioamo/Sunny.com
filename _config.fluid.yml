@@ -386,7 +386,7 @@ main:
 
   background_color: white
 
-  main_img: 
+  main_img: /article-img/canvas.jpg
 
 #---------------------------
 # 页脚

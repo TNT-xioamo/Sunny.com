@@ -42,9 +42,7 @@ var main_img = page.main_img || theme.main.main_img
     </div>
   </header>
 
-  <main class="page-main" <%- theme.main && theme.banner.enable && 'enable=true' %>
-    style="background: url('<%- url_for(main_img) %>') no-repeat center center;
-      background-size: cover;">
+  <main class="page-main">
 
     <% if(is_post() || page.layout === '404') { %>
       <%- body %>
