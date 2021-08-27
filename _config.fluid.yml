@@ -111,7 +111,7 @@ fun_features:
     # Options: hover | always | touch
     visible: hover
     # Option：§ | # | ❡
-    icon: ""
+    icon: "❡"
 
   # 加载进度条
   # Progress bar when loading
@@ -378,6 +378,15 @@ scroll_down_arrow:
 scroll_top_arrow:
   enable: true
 
+#---------------------------
+# 主题背景
+#---------------------------
+main: 
+  enable: false
+
+  background_color: white
+
+  main_img: 
 
 #---------------------------
 # 页脚
@@ -431,7 +440,7 @@ footer:
 index:
   # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
-  banner_img: /img/banner.jpg
+  banner_img: /img/star-trails.jpg
 
   # 头图高度，屏幕百分比
   # Height ratio of banner image
@@ -503,7 +512,7 @@ index:
 # Post Page
 #---------------------------
 post:
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
@@ -778,7 +787,7 @@ twikoo:
 # Archive Page
 #---------------------------
 archive:
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -790,7 +799,7 @@ archive:
 #---------------------------
 category:
   enable: true
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:
@@ -820,7 +829,7 @@ category:
 #---------------------------
 tag:
   enable: true
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle:
@@ -838,7 +847,7 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle: 我会一向在，纵使寂寞开成海。
@@ -861,7 +870,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -872,7 +881,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "Page not found"
@@ -884,7 +893,7 @@ page404:
 #---------------------------
 links:
   enable: true
-  banner_img: /img/banner-home.jpg
+  banner_img: /img/star-trails.jpg
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle:

@@ -4,6 +4,7 @@ var banner_img = page.banner_img || theme.index.banner_img
 var banner_img_height = page.banner_img_height || theme.index.banner_img_height
 var banner_mask_alpha = page.banner_mask_alpha || theme.index.banner_mask_alpha
 var colorSchema = theme.dark_mode && theme.dark_mode.enable && theme.dark_mode.default ? theme.dark_mode.default : ''
+var main_img = page.main_img || theme.main.main_img
 %>
 
 <!DOCTYPE html>
@@ -41,7 +42,10 @@ var colorSchema = theme.dark_mode && theme.dark_mode.enable && theme.dark_mode.d
     </div>
   </header>
 
-  <main>
+  <main class="page-main" <%- theme.main && theme.banner.enable && 'enable=true' %>
+    style="background: url('<%- url_for(main_img) %>') no-repeat center center;
+      background-size: cover;">
+
     <% if(is_post() || page.layout === '404') { %>
       <%- body %>
     <% } else { %>
@@ -82,6 +86,7 @@ var colorSchema = theme.dark_mode && theme.dark_mode.enable && theme.dark_mode.d
         </div>
       </div>
     <% } %>
+    <canvas id="cas"></canvas>
   </main>
 
   <%- partial('_partial/footer', { params: { subtitle: subtitle } }) %>
