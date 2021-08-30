@@ -8,11 +8,11 @@ date: 2021-08-27
 
 ## Git 常用命令
 
+  <!--more-->
 ### 配置
-```
+```js
   ## 显示当前的Git配置
   $ git config --list
-
   ## 编辑Git配置文件
   $ git config -e [--global]
 

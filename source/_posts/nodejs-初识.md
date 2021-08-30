@@ -1,13 +1,15 @@
 ---
 title: 初识node
-tags: [node, 前端]
+tags: [Node.js, 前端]
 index_img: /article-img/Cover.jpg
 categories: 前端
 date: 2021-08-28
 ---
 
+
 ### Node.js 
   Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
+  <!--more-->
   Node.js® 是基于Chrome 的 V8 JavaScript 引擎构建的 JavaScript 运行环境。
   nodejs 不能算是语言，只是JavaScript的一个运行环境
   在node中模块规范为commonJs
@@ -39,11 +41,10 @@ date: 2021-08-28
         -1. 文件路径
         -2. 编码格式，'utf-8', 如不指定 则返回 buffer 
         -3. 回调函数，
-
 #### 二，buffer（缓冲器）的相关操作
   [buffer 中文教程](http://nodejs.cn/api/buffer.html) -------- [buffer 英文教程](https://nodejs.org/api/buffer.html)
 
-  #### 1. 创建buffer
+  ##### 1. 创建buffer
     1.1 Buffer.alloc(size[, fill[, encoding]])
       size: Buffer 所需的长度
       fill：填充的值，默认为 0
@@ -72,8 +73,30 @@ date: 2021-08-28
         ```js
           console.log(buf2.toString('base64')) // 输出编码为base64的字符串
         ```
-  #### 2. 合并Buffer buffer.concat()
+  ##### 2. 合并Buffer buffer.concat()
       ```js
         const buf3 = Buffer.concat([buf1,buf2])
         console.log(buf3) // 合并后的
       ```
+#### 三， ES6 异步代码同步化
+  ##### 1. 使用 promisify (promise)
+  ```js
+    // 将promisify 结构
+    const { promisify } = require('util')
+    const readFile = promisify(fs.readFile)
+    async function asyncReanFile(){
+      try{
+        const data = await readFile('fileName')
+        console.log(data)
+      }catch(err){
+        console.log(err)
+      }
+    }
+  ```
+  #### 2. 使用generator
+  ```js
+    function* read(){
+      yield fs.readFile('fileName')
+    }
+    read().next().value.then(res=>{}).catch(err=>{})
+  ```

@@ -9,6 +9,7 @@ date: 2021-03-26
 
 ## canvas 笔记
   [canvas 教程](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
+    <!--more-->
 ## 一， canvas基本使用
   ```js
     <canvas width="400" height="500" id="mycanvas">
