@@ -468,7 +468,7 @@ index:
 
       # 请求地址
       # Request url
-      url: "https://api.btstu.cn/yan/api.php?encode=json"
+      url: "https://api.oddfar.com/yl/q.php?c=2004&encode=json"
 
       # 请求方法
       # Request method
