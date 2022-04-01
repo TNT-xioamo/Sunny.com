@@ -97,3 +97,87 @@ mermaid: true
   </script>
 
 ```
+
+### Proxy 响应式绑定
+Vue2.x 内部是通过 Object.defineProperty 这个 API 去劫持数据的 getter 和 setter 来实现响应式的。因为这个 API 它必须预先知道要拦截的 key 是什么，所以它并不能检测对象属性的添加和删除。直接造成了数组元素的直接修改不会触发响应式机制
+
+例如：对象obj的 name 属性进行劫持：
+
+```js
+  const obj = {};
+  Object.defineProperty(obj, 'name', {
+    get: function() {
+        console.log('get val'); &emsp
+    },
+    set: function(newVal) {
+        console.log(`set val: ${newVal}`)
+        document.getElementById('input').value = newVal
+        document.getElementById('span').innerHTML = newVal
+    }
+  });
+  const input = document.getElementById('input')
+  input.addEventListener('keyup', function(e){
+    obj.text = e.target.value
+  })
+
+```
+
+  那么在3.x使用了Proxy API 做数据劫持，它劫持的是整个对象，自然对象的增删都可以监测到，便很好的规避了以上的问题，那么可以将上述例子改写为：
+
+ ```js
+    const input = document.getElementById('input')
+    const p = document.getElementById('p')
+    const obj = {}
+    const newObj = new Proxy(obj, {
+      get: function(target, key, receiver) {
+        console.error(`getting: ${key}`)
+        return Reflect.get(target, key, receiver)
+      },
+      set: function(target, key, value, receiver) {
+        console.error(target, key, value, receiver)
+        if(key = 'name') {
+          input.value = value
+          p.innerHtml = value
+        }
+        return Reflect.set(target, key, value, receiver)
+      }
+    })
+    input.addEventListener('keyup', function(e) {
+      newObj.name = e.target.value
+    })
+ ```
+  通过 Proxy 实现双向响应式绑定，相比 defineProperty 的遍历属性的方式效率更高，性能更好，另外 Virtual DOM 更新只 diff 动态部分、事件缓存等，也带来了性能上的提升。
+
+### Tree-Shaking Support（摇树优化）
+
+tree-sharking 即在构建工具构建后消除程序中无用的代码，来减少包的体积。
+相比 Vue2.x 导入整个 Vue 对象，Vue3.0 支持按需导入，只打包需要的代码。Tree-Shaking 依赖 ES2015 模块语法的静态结构（即 import 和 export），通过编译阶段的静态分析，找到没有引入的模块并打上标记。像我们在项目中如果没有引入 Transition、KeepAlive 等不常用的组件，那么它们对应的代码就不会打包进去。
+
+### 组合式 API
+
+Vue2.x 中组件传统的 data，computed，watch，methods 写法，我们称之为选项式 API（Options API 
+
+ #### (1) 选项式 API 存在的缺陷
+ 随着业务复杂度越来越高，代码量会不断的加大；由于代码需要遵循 option 的配置写到特定的区域，导致后续维护非常的复杂，代码可复用性也不高。比如，很长的 methods 区域代码、data变量声明与方法区域未在一起。
+ #### (2) 与mixins 相比较
+ 对于上述问题，第一想到的可能是利用mixins解决，但当抽离并引用了大量的 mixins，会有两个不可避免的问题发生，命名冲突与数据来源不清晰
+
+ 组合式API和mixins 的差别：
+  
+  - 层级不同： 组合式API 与组件是嵌套关系，而mixins与组件是同级关系
+  - 影响层面不同：组合式API 作为组件被调用，并且变量逻辑是组件控制，耦合性很低，而mixins是耦合在代码逻辑里面的， 并且存在了变量的互相引用，为后续更新与维护存在隐患，需小心使用
+
+  #### (3) 与React Hook 相比较
+
+  组合式API受到了 React Hook 的启发，是相似的概念与语法，那么组合式API使用上相对于React Hook 简便很多：
+
+  - 相同的逻辑组合，组件的复用能力
+  - 只调用一次 setup 方法更符合js, 规避了闭包变量问题,(我们都知道React Hook 存在闭包变量问题)，没有内存/GC压力，不存在内联回调导致子组件永远更新的问题
+
+  #### (4) 组合式API的使用
+
+  - setup方法: 可使用(script setup)替代
+    Vue3.X 所有代码逻辑将在setup 方法中实现，包括： data， watchcomputed，methods等，并且不再有this(解决了this)，
+    会先执行 setup 方法，再兼容2.x的其他方法，需要注意的是 3.x中setup 方法在组件生命周期内只会执行一次，不会再重复执行
+
+  - 生命周期函数 (生命周期钩子):
