@@ -467,8 +467,9 @@ index:
       enable: true
 
       # 请求地址
+      # 音乐 接口 https://shengapi.cn/api/qqyy.php
       # Request url https://api.xygeng.cn/one
-      url: "https://api.xygeng.cn/one" 
+      url: "https://api.xygeng.cn/one?encode=realjson" 
 
       # 请求方法
       # Request method
