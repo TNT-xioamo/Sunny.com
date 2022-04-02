@@ -8,4 +8,4 @@ tags: [关于, 我]
 <!-- https://www.cnblogs.com/bndong/ bndong -->
 ### 👋 嗨，我是瓶中精灵
 
-🌱 
+🌱   理想的自己
