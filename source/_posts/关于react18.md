@@ -53,5 +53,28 @@ mermaid: true
 
   React 技术面试中会被问到 <strong> “ steState 是同步还是异步，可以实现同步吗？ 怎么实现，异步的原理又是什么” </strong>
 
-    先回答这个问题：(可同步，可异步)，如果同步的话，只需要把 setState 放在 Promises中
+    先回答这个问题：(可同步，可异步)，如果同步的话，只需要把 setState 放在 Promises，setTimeout 或者原生事件中，异步可理解为批量处理，为什么批量处理，
+    对于react来说，state攒够了一波一起更新来的简单点。
+    但是 18 版本以前批处理是依赖于合成事件，这次更新React 18 之后，state 的批处理更新不再与合成事件有直接关系，而是自动进行处理
+
+    ```js
+      // 以前版本 会render两次
+      setTimeout(_ => {
+        setCount(c => c + 1)
+        setFlag(f => !f)
+      })
+
+      // React 18 自动批处理 只会render一次
+      setTimeout(_ => {
+        setCount(c => c + 1)
+        setFlag(f => !f)
+      }, 1000)
+    ```
+    虽然建议setState自动批处理，但是有应急处理，想要同步setState，这个时候可以使用flushSync,
+
+    ```js
+      // import { flushSync } from 'react-dom'
+      
+    ```
+  
 
