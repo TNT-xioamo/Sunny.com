@@ -1,9 +1,9 @@
 ---
-title: 关于React18新特性
-tags: [React，前端]
+title: Vue配置打包
+tags: [vue，前端]
 index_img: /article-img/Fall.jpg
-categories: React 18
-date: 2022-03-31
+categories: webpack
+date: 2022-05-02
 mermaid: true
 ---
 
