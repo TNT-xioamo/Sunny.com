@@ -963,40 +963,40 @@ static_prefix:
   github_markdown: https://fastly.jsdelivr.net/npm/github-markdown-css@4.0.0/
 
 # https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/
-  jquery: http://unpkg.zhimg.com/jquery@3.5.1/dist/
+  jquery: https://unpkg.zhimg.com/jquery@3.5.1/dist/
 
   bootstrap: https://fastly.jsdelivr.net/npm/bootstrap@4.5.3/dist/
 
   highlightjs: https://fastly.jsdelivr.net/npm/highlight.js@10.4.0/
 
-  prismjs: http://unpkg.zhimg.com/prismjs@1.22.0/
+  prismjs: https://unpkg.zhimg.com/prismjs@1.22.0/
 
   tocbot: https://fastly.jsdelivr.net/npm/tocbot@4.12.0/dist/
 
-  typed: http://unpkg.zhimg.com/typed.js@2.0.11/lib/
+  typed: https://unpkg.zhimg.com/typed.js@2.0.11/lib/
 
-  fancybox: http://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/
+  fancybox: https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/
 
   nprogress: https://fastly.jsdelivr.net/npm/nprogress@0.2.0/
 
-  mathjax: http://unpkg.zhimg.com/mathjax@3.1.2/es5/
+  mathjax: https://unpkg.zhimg.com/mathjax@3.1.2/es5/
 
-  katex: http://unpkg.zhimg.com/katex@0.12.0/dist/
+  katex: https://unpkg.zhimg.com/katex@0.12.0/dist/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: http://unpkg.zhimg.com/clipboard@2.0.6/dist/
+  clipboard: https://unpkg.zhimg.com/clipboard@2.0.6/dist/
 
   mermaid: https://fastly.jsdelivr.net/npm/mermaid@8.8.3/dist/
 
-  valine: http://unpkg.zhimg.com/valine@1.4.14/dist/
+  valine: https://unpkg.zhimg.com/valine@1.4.14/dist/
 
-  waline: http://unpkg.zhimg.com/@waline/client@0.14.8/dist/
+  waline: https://unpkg.zhimg.com/@waline/client@0.14.8/dist/
 
-  gitalk: http://unpkg.zhimg.com/npm/gitalk@1.7.0/dist/
+  gitalk: https://unpkg.zhimg.com/npm/gitalk@1.7.0/dist/
 
   disqusjs: https://fastly.jsdelivr.net/npm/disqusjs@1.0/dist/
 
-  twikoo: http://unpkg.zhimg.com/twikoo@1.3.0/dist/
+  twikoo: https://unpkg.zhimg.com/twikoo@1.3.0/dist/
 
   hint: /lib/hint/
