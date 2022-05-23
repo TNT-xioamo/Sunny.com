@@ -1,0 +1,23 @@
+/* .page-main  #board .container .row {
+}
+
+.page-main  #board .container .col-md-10{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+#board .m-auto{
+  margin: 0 !important;
+}
+.page-main  #board .container .col-md-10 .row {
+  width: 50%;
+} */
+.page-main  #board .container .col-md-10 .row .index-img {
+  transition: 0.2s;
+}
+.page-main  #board .container .col-md-10 .row .index-img:hover {
+  transform: scale(1.1);
+}

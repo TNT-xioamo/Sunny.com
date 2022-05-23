@@ -155,7 +155,7 @@
              // how fast to cycle through colors in the HSL color space
              colorCycleSpeed: 6,
              // where to start from on the Y axis on each side (top|min, middle|center, bottom|max, random)
-             verticalPosition: "center",
+             verticalPosition: "middle",
              // how fast to get to the other side of the screen
              horizontalSpeed: 200,
              // how many ribbons to keep on screen at any given time
@@ -163,7 +163,7 @@
              // add stroke along with ribbon fill colors
              strokeSize: 0,
              // move ribbons vertically by a factor on page scroll
-             parallaxAmount: -0.5,
+             parallaxAmount: -0.1,
              // add animation effect to each ribbon section over time
              animateSections: true };
  
