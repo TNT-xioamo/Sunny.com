@@ -9,10 +9,11 @@ mermaid: true
 ---
 
 ## <font color="#ef7060" size=4 face="">方案 一 </font>
-
+  <!-- more -->
 ```
   window.print浏览器打印是一个非常成熟的东西，直接调用window.print或者document.execCommand('print')达到打印及保存效果
   Mac徽标键加p直接调用查看效果，windows可以ctrl+p查看效果
+
 ```
 
 ### 存在问题
