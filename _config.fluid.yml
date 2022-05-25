@@ -860,7 +860,7 @@ about:
   icons:
     - { class: "iconfont icon-github-fill", link: "https://github.com", tip: "GitHub" }
     - { class: "iconfont icon-douban-fill", link: "https://juejin.cn/user/2911162523200781", tip: "掘金" }
-    - { class: "iconfont icon-douban-fill", link: "https://www.zhihu.com/", tip: "知乎" }
+    - { class: "iconfont icon-zhihu-fill", link: "https://www.zhihu.com/", tip: "知乎" }
     - { class: "iconfont icon-comment", tip: "直达评论" }
 
 
