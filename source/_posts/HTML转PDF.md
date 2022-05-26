@@ -1,6 +1,6 @@
 ---
 title: HTML转PDF并导出
-tags: [面试，前端]
+tags: [pdf，前端]
 index_img: /article-img/v7.jpeg
 banner_img: /img/sdqryn.png
 categories:

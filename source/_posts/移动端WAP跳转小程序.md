@@ -1,6 +1,6 @@
 ---
 title: 聊一下关于WAP跳转小程序的实现方案
-tags: [面试，前端]
+tags: [前端， 小程序]
 index_img: /article-img/v2.jpeg
 banner_img: /img/sdqryn.png
 categories:

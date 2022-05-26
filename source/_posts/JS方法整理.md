@@ -3,7 +3,7 @@ title: Js 的一些方法整理
 tags: [防抖节流, JavaScript]
 index_img: /article-img/canvas.jpg
 categories: 前端
-date: 2022-05-26
+date: 2022-02-26
 mermaid: true
 ---
 
