@@ -1,5 +1,5 @@
 ---
-title: Js 防抖节流
+title: Js 的一些方法整理
 tags: [防抖节流, JavaScript]
 index_img: /article-img/canvas.jpg
 categories: 前端
@@ -72,3 +72,35 @@ mermaid: true
     }
   }
   ```
+#### -redux 中间件
+
+```js
+  /**
+   * 
+  */
+  export default function applyMiddleware(...middlewares) {
+    return (...args) => {
+      // 通过createStore方法创建一个store
+      const store = createStore(...args)
+      // 定义一个dispatch 如果中间件构造过程调用，抛出异常
+      let dispatch = () => {
+        throw new Error('')
+      }
+      // 定义middlewareAPI，有两个方法，一个是getState,一个是dispatch,将其作为中间件调用store的侨接
+      const middlewareAPI = {
+        getState: store.getState,
+        dispatch: (...args) => dispatch(...args)
+      }
+      const chain = middlewares.map((middleware) => middleware(middlewareAPI))
+      // 使用compose整合chain数组，并赋值给dispatch
+      // 中间件的初始化是从右往左的，而dispatch 执行是从左往右
+      // compose执行完后，middlewareAPI定义的dispatch方法内的dispatch变量被覆盖
+      // 调用dispatch,会重新从左往右执行
+      dispatch = compose(...chain)(store.dispatch)
+      return {
+        ...store,
+        dispatch
+      }
+    }
+  }
+```
