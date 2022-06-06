@@ -176,4 +176,25 @@ mermaid: true
     3.14159 | 0 // 3
     // '>>>' 不用于对负数取整,其他都可以
   ```
-
+  ## TypeScript 单行代码汇总
+  - 检查日期是否为工作日
+    ```ts
+      const isWeekday = (d: Date): boolean => d.getDay() % 6 !== 0
+      isWeekday(new Date(2022, 2, 21)) // -> true
+      isWeekday(new Date(2021, 2, 20)) // -> false
+    ```
+  - 反转字符串
+    ```ts
+      const reverse = (s: string): string => s.split('').reverse().join('')
+      reverse('eloy musk')
+    ```
+  - 随机生成颜色
+    ```ts
+      const randomHexColor = (): string => `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0')}`;
+      randomHexColor();
+    ```
+  - 将大写改为小写
+    ```ts
+      const recapitalize = (str: string): string => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
+      recapitalize('Hello world'); // -> hello world
+    ```
