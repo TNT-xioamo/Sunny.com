@@ -72,6 +72,69 @@ mermaid: true
     }
   }
   ```
+
+  ### 3. 在执行下一个操作之前等待指定的持续时间（以毫秒为单位）。
+  ```js
+    const sleep = async (duration) => (
+      new Promise(resolve =>
+        setTimeout(resolve, duration)
+      )
+    )
+    await sleep(1000)
+  ```
+  ### 4. 根据键控功能对对象中的相关项进行分组和索引。
+  ```js
+    const groupBy = (fn, list) => (
+      list.reduce((prev, next) => ({
+        ...prev,
+        [fn(next)]: [...(prev[fn(next)] || []), next]
+      }), {})
+    )
+    groupBy(vehicle => vehicle.make, [{ make: 'tesla', model: '3' }, { make: 'tesla', model: 'y' }])
+  ```
+  ### 5. Flatten 通过递归地从嵌套子列表中提取所有项目来创建一个平面列表。
+  ```js
+    const flatten = list => list.reduce((prev, next) => ([
+      ...prev
+       ...(Array.isArray(next) ? flatten(next) : [next])
+    ]), [])
+    flatten([[1, 2, [3, 4], 5, [6, [7, 8]]]])
+  ```
+
+  ### 6. 查找键控函数定义的两个列表中存在的所有值。
+  ```js
+    const intersectionBy = (fn, arr1, arr2) => {
+      const b = new Set(arr2.map(fn))
+      return arr1.filter(val => b.has(fn(val)))
+    }
+    intersectionBy(v => v, [1, 2, 3], [2, 3, 4])
+  ```
+
+  ### 7. 升序与降序
+
+  ```js
+    // 升序
+    const ascending = (fn) => (a, b) => {
+      const valA = fn(a)
+      const valB = fn(b)
+      return valA < valB ? -1 : valA > valB ? 1 : 0
+    }
+    const byPrice = ascending(val => val.price)
+    [{ price: 300 }, { price: 100 }, { price: 200 }].sort(byPrice)
+    // 降序
+    const descending = (fn) => (a, b) => {
+      const valA = fn(b)
+      const valB = fn(a)
+      return valA < valB ? -1 : valA > valB ? 1 : 0
+    }
+    const byPrice = descending(val => val.price)
+    [{ price: 300 }, { price: 100 }, { price: 200 }].sort(byPrice)
+  ```
+  ### 8. Find Key 在满足给定predicate的索引中找到第一个键值。
+  ```js
+    const findKey = (predicate, index) => Object.keys(index).find(index => predicate(index[key], key, index))
+    findKey(car => !car.available, {tesla: { available: true }, ford: { available: false }, gm: { available: true }})
+  ```
 ## -redux 中间件
 
 ```js
