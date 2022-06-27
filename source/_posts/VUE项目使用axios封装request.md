@@ -6,7 +6,8 @@ categories: VUE
 date: 2022-06-14
 mermaid: true
 ---
- <!-- more -->
+「时光不负，创作不停」
+<!-- more -->
 ```js
 import axios from 'axios'
 import {Message} from 'element-ui' // 项目用的element ui
