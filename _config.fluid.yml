@@ -973,7 +973,7 @@ static_prefix:
 
   tocbot: https://fastly.jsdelivr.net/npm/tocbot@4.12.0/dist/
 
-  typed: https://unpkg.zhimg.com/typed.js@2.0.11/lib/
+  typed: https://cdn.bootcss.com/typed.js/2.0.11/
 
   fancybox: https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/
 
