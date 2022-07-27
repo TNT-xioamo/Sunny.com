@@ -16,4 +16,8 @@
   scriptrs.type = 'text/javascript'
   scriptrs.src = '/js/ribbon.js'
   bady.appendChild(scriptrs)
+
+  const scriptBack = document.createElement('script')
+  scriptTag.src = '/js/background.js'
+  bady.appendChild(scriptBack)
 })(window, document)

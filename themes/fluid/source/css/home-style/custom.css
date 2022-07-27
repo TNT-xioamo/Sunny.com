@@ -21,3 +21,11 @@
 .page-main  #board .container .col-md-10 .row .index-img:hover {
   transform: scale(1.1);
 }
+#backgroundCanvas {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
