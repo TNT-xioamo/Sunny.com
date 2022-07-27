@@ -201,11 +201,16 @@ font:
 
 # 指定自定义 .js 文件路径，支持列表；路径是相对 source 目录，如 /js/custom.js 对应存放目录 source/js/custom.js
 # Specify the path of your custom js file, support list. The path is relative to the source directory, such as `/js/custom.js` corresponding to the directory `source/js/custom.js`
-custom_js: /js/special_efficacy.js
+custom_js:
+  - /js/special_efficacy.js
+  - //cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js  #/APlayer#/APlayer依赖
+  - //cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js  #/APlayer依赖
 
 # 指定自定义 .css 文件路径，用法和 custom_js 相同
 # The usage is the same as custom_js
-custom_css: /css/home-style/custom.css
+custom_css:
+  - /css/home-style/custom.css
+  - //cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css   #/APlayer依赖
 
 # 自定义 <head> 节点中的 HTML 内容
 # Customize <head> HTML content
@@ -213,7 +218,9 @@ custom_head: ''
 
 # 自定义底部 HTML 内容（位于 footer 上方），注意不要和 `post: custom` 配置冲突
 # Customize the HTML content at the bottom (located above the footer), be careful not to conflict with `post: custom`
-custom_html: ''
+custom_html:
+
+    - <div class="aplayer" data-id="7868042847" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div>
 
 # 网页访问统计
 # Analysis of website visitors
@@ -289,7 +296,10 @@ version:
   # If true, check whether Fluid is the latest version after hexo generate
   check: false
 
-
+# 音乐播放器
+aplayer:
+  meting: true
+  # asset_inject: false
 #---------------------------
 # 页头
 # Header
@@ -300,7 +310,7 @@ version:
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "瓶中精灵"
+  blog_title: "Stark's blog"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -324,7 +334,8 @@ navbar:
     - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
     - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
     - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
-    #- { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
+    - { key: "music", link: "/music/", icon: "iconfont icon-music" }
+    # - { key: "links", link: "/links/", icon: "iconfont icon-link-fill" }
 
 # 搜索功能，基于 hexo-generator-search 插件，若已安装其他搜索插件请关闭此功能，以避免生成多余的索引文件
 # Search feature, based on hexo-generator-search. If you have installed other search plugins, please disable this feature to avoid generating redundant index files
@@ -408,7 +419,7 @@ footer:
   # 展示网站的 PV、UV 统计数
   # Display website PV and UV statistics
   statistics:
-    enable: false
+    enable: true
 
     # 统计数据来源，如果使用 leancloud 需要设置 `web_analytics: leancloud` 中的参数；如果使用 busuanzi 可能会有请求失败的情况
     # Data source. If use leancloud, you need to set the parameter in `web_analytics: leancloud`
@@ -434,11 +445,11 @@ footer:
     police_icon: /img/police_beian.png
 
 #---------------------------
-# 首页
+# 主页
 # Home Page
 #---------------------------
 index:
-  # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
+  # 主页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
   banner_img: /img/vdysjx.png
 
@@ -848,12 +859,12 @@ tag:
 #---------------------------
 about:
   enable: true
-  banner_img: /img/star-trails.jpg
+  banner_img: /img/dojm2h.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
   subtitle: 我会一向在，纵使寂寞开成海。
   avatar: /img/avatar.png
-  name: "瓶中精灵"
+  name: "Stark's blog"
   intro: "Since I have chosen a far place, I will only take care of the wind and rain"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, The icon is no longer a link, but a hovering QR code
@@ -872,7 +883,7 @@ about:
 # Custom Page through `hexo new page`
 #---------------------------
 page:
-  banner_img: /img/star-trails.jpg
+  banner_img: /img/dojm2h.png
   banner_img_height: 60
   banner_mask_alpha: 0.3
 
@@ -883,7 +894,7 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/star-trails.jpg
+  banner_img: /img/dojm2h.png
   banner_img_height: 85
   banner_mask_alpha: 0.3
   subtitle: "Page not found"

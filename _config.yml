@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 瓶中精灵
+title: Stark's blog
 subtitle:
 description:
 keywords:
@@ -70,6 +70,14 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# 音乐播放器
+aplayer:
+  meting: true
+  asset_inject: false
+inject:
+  head:
+  bottom:
+    - <div class="aplayer" data-id="7868042847" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div>
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

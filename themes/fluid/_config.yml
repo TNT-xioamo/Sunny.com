@@ -291,7 +291,7 @@ version:
 navbar:
   # 导航栏左侧的标题，为空则按 hexo config 中 `title` 显示
   # The title on the left side of the navigation bar. If empty, it is based on `title` in hexo config
-  blog_title: "瓶中精灵"
+  blog_title: "Stark's blog"
 
   # 导航栏毛玻璃特效，实验性功能，可能会造成页面滚动掉帧和抖动，部分浏览器不支持会自动不生效
   # Navigation bar frosted glass special animation. It is an experimental feature
@@ -378,7 +378,7 @@ footer:
   # 页脚第一行文字的 HTML，建议保留 Fluid 的链接，用于向更多人推广本主题
   # HTML of the first line of the footer, it is recommended to keep the Fluid link to promote this theme to more people
   content: '
-    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>瓶中精灵</span></a>
+    <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Stark's blog</span></a>
     <i class="iconfont icon-love"></i>
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a>
   '
@@ -413,11 +413,11 @@ footer:
 
 
 #---------------------------
-# 首页
+# 主页
 # Home Page
 #---------------------------
 index:
-  # 首页 Banner 头图，可以是相对路径或绝对路径，以下相同
+  # 主页 Banner 头图，可以是相对路径或绝对路径，以下相同
   # Path of Banner image, can be a relative path or an absolute path, the same on other pages
   banner_img: /img/default.png
 
@@ -431,7 +431,7 @@ index:
   # Available: 0 - 1.0
   banner_mask_alpha: 0.3
 
-  # 首页副标题的独立设置
+  # 主页副标题的独立设置
   # Independent config of home page subtitle
   slogan:
     enable: true
@@ -440,7 +440,7 @@ index:
     # If empty, text based on `subtitle` in hexo config
     text: "An elegant Material-Design theme for Hexo"
 
-    # 通过 API 接口作为首页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
+    # 通过 API 接口作为主页副标题的内容，必须返回的是 JSON 格式，如果请求失败则按 text 字段显示，该功能必须先开启 typing 打字机功能
     # Subtitle of the homepage through the API, must be returned a JSON. If the request fails, it will be displayed in `text` value. This feature must first enable the typing animation
     api:
       enable: true
@@ -479,7 +479,7 @@ index:
     category: true
     tag: true
 
-  # 文章通过 sticky 排序后，在首页文章标题前显示图标
+  # 文章通过 sticky 排序后，在主页文章标题前显示图标
   # If the posts are sorted by `sticky`, an icon is displayed in front of the post title
   post_sticky:
     enable: true
@@ -495,7 +495,7 @@ post:
   banner_img_height: 70
   banner_mask_alpha: 0.3
 
-  # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
+  # 文章在主页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
   default_index_img:
 

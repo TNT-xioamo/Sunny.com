@@ -17,7 +17,7 @@ post:
   next: 下一篇
 
 home:
-  title: 首页
+  title: 主页
 
 archive:
   title: 归档
@@ -42,3 +42,7 @@ page404:
 links:
   title: 友链
   subtitle: 友情链接
+
+music:
+  title: 音乐
+  subtitle: 歌单
