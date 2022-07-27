@@ -1,5 +1,4 @@
 (function () {
-    console.error(12313)
     var STAR_COUNT = (window.innerWidth + window.innerHeight) / 8,
         STAR_SIZE = 3,
         STAR_MIN_SCALE = 0.2,

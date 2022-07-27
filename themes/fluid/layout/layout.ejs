@@ -85,12 +85,12 @@ var main_img = page.main_img || theme.main.main_img
       </div>
     <% } %>
     <canvas id="cas"></canvas>
+    <canvas id="backgroundCanvas" width="1920" height="261"></canvas>
   </main>
 
   <%- partial('_partial/footer', { params: { subtitle: subtitle } }) %>
 
   <!-- SCRIPTS -->
   <%- partial('_partial/scripts') %>
-  <canvas id="backgroundCanvas" width="1920" height="261"></canvas>
 </body>
 </html>
