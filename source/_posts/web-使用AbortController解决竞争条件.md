@@ -3,7 +3,7 @@ title: web解决竞争条件
 tags: [REACT, VUE]
 index_img: /article-img/feather.jpg
 categories: javaScript
-date: 2022-08-04
+date: new Date()
 mermaid: true
 ---
 

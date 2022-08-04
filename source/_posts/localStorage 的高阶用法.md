@@ -265,8 +265,8 @@ import {isSupportStorage, hasStorage, setStorage,getStorage,getStorageKeys,getSt
 ```js
   /***
  * title: storage.js
- * Author: Gaby
- * Email: xxx@126.com
+ * Author: Stark
+ * Email: xxx@136.com
  * Time: 2022/6/1 17:30
  * last: 2022/6/2 17:30
  * Desc: 对存储的简单封装
