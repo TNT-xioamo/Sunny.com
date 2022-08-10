@@ -135,6 +135,50 @@ mermaid: true
     const findKey = (predicate, index) => Object.keys(index).find(index => predicate(index[key], key, index))
     findKey(car => !car.available, {tesla: { available: true }, ford: { available: false }, gm: { available: true }})
   ```
+  ### 9 计算el-table宽度自适应
+  ```js
+    function handleColumnWidth(table, padding = 32) {
+      const colgroup = table.querySelector("colgroup");
+      const colDefs = [...colgroup.querySelectorAll("col")];
+      colDefs.forEach((col) => {
+        const clsName = col.getAttribute("name");
+        const cells = [
+          ...table.querySelectorAll(`td.${clsName}`),
+          ...table.querySelectorAll(`th.${clsName}`),
+        ];
+        if (cells[0]?.classList?.contains?.("leave-alone")) {
+          return;
+        }
+        const widthList = cells.map((el) => {
+          return el.querySelector(".cell")?.scrollWidth || 0;
+        });
+        const max = Math.max(...widthList);
+        table.querySelectorAll(`col[name=${clsName}]`).forEach((el) => {
+          el.setAttribute("width", max + padding);
+        });
+      });
+    }
+    export default {
+      install(Vue) {
+        Vue.directive("fit-columns", {
+          update() {},
+          bind() {},
+          inserted(el, binding) {
+            setTimeout(() => {
+              handleColumnWidth(el, binding.value);
+            }, 300);
+          },
+          componentUpdated(el, binding) {
+            el.classList.add("r-table");
+            setTimeout(() => {
+              handleColumnWidth(el, binding.value);
+            }, 300);
+          },
+          unbind() {},
+        });
+      }
+    }
+  ```
 ## -redux 中间件
 
 ```js
