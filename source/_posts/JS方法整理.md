@@ -194,6 +194,35 @@ mermaid: true
     }
   ```
 
+  ### 11 复制到剪切板
+  ```js
+    const copyToClipboard = (text) => navigator.clipboard && navigator.clipboard.writeText && navigator.clipboard.writeText(text)
+    copyToClipboard("Hello World!")
+  ```
+  ### 12 检测暗色主题
+  ```js
+    const isDarkMode = () => window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    console.log(isDarkMode())
+  ```
+  ### 13 
+  ```js
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // `entry.target` is the dom element
+          console.log(`${entry.target.id} is visible`);
+        }
+      });
+    };
+    const options = { threshold: 1.0 }
+    const observer = new IntersectionObserver(callback, options);
+    const btn = document.getElementById("btn");
+    const bottomBtn = document.getElementById("bottom-btn");
+    observer.observe(btn);
+    observer.observe(bottomBtn);
+  ```
+
+
 
 ## -redux 中间件
 
