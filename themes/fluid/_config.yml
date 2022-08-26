@@ -664,7 +664,7 @@ disqus:
   # 以下为 Disqusjs 支持, 国内用户如果想使用 Disqus 建议配合使用
   # The following are Disqusjs configurations, please ignore if DisqusJS is not required
   # See: https://github.com/SukkaW/DisqusJS
-  disqusjs: true
+  disqusjs: false
   apikey: y9FRF8KY7mbZiDigRE0mKQdt6zgn72k70k59Klgcn52TYo4kWDBkrLogJwfPGPOW
 
 # Gitalk
