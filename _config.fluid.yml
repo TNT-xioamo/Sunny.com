@@ -986,7 +986,8 @@ static_prefix:
 
   typed: https://cdn.bootcss.com/typed.js/2.0.11/
 
-  fancybox: https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/
+  # fancybox: https://unpkg.zhimg.com/@fancyapps/fancybox@3.5.7/dist/
+  fancybox: https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/
 
   nprogress: https://fastly.jsdelivr.net/npm/nprogress@0.2.0/
 
@@ -996,7 +997,8 @@ static_prefix:
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://unpkg.zhimg.com/clipboard@2.0.6/dist/
+  # clipboard: https://unpkg.zhimg.com/clipboard@2.0.6/dist/
+  clipboard: https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/
 
   mermaid: https://fastly.jsdelivr.net/npm/mermaid@8.8.3/dist/
 
