@@ -699,7 +699,8 @@ disqus:
   # See: https://github.com/SukkaW/DisqusJS
   # 配置地址：https://disqus.com/api/applications/7355337/
   disqusjs: true
-  apikey: ElKzGDDGGiHZ3AnoJqwJdkTMlsDhPTAqtaL7fD8kDKnmUoxcDlnOHbCBPjyhV7dI
+  apikey: y9FRF8KY7mbZiDigRE0mKQdt6zgn72k70k59Klgcn52TYo4kWDBkrLogJwfPGPOW
+  # apikey: ElKzGDDGGiHZ3AnoJqwJdkTMlsDhPTAqtaL7fD8kDKnmUoxcDlnOHbCBPjyhV7dI
 
 # Gitalk
 # 基于 GitHub Issues
