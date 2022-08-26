@@ -179,6 +179,22 @@ mermaid: true
       }
     }
   ```
+  ### 10 拆解树为数组
+  ```js
+    /**
+     * 拆解树为数组，并且不会对原始对象进行修改，原始对象子集列表也不会进行删除。
+     * @param tree          {Array}          树形数组
+     * @param children_key  {String}         子集对象 'key'
+     * @return {[{}]} 树形被拆解后的数组
+     * @author Stark
+     */
+    export const treeToList = (tree, children_key='children') => {
+      if(!!!tree || Object.prototype.toString.call(tree) !== '[object Array]' || tree.length<=0) return []
+      return tree.reduce((pre, cur) => pre.concat(cur, treeToList(cur[children_key], children_key)), [])
+    }
+  ```
+
+
 ## -redux 中间件
 
 ```js
