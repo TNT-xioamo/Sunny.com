@@ -698,7 +698,7 @@ disqus:
   # The following are Disqusjs configurations, please ignore if DisqusJS is not required
   # See: https://github.com/SukkaW/DisqusJS
   # 配置地址：https://disqus.com/api/applications/7355337/
-  disqusjs: false
+  disqusjs: true
   apikey: ElKzGDDGGiHZ3AnoJqwJdkTMlsDhPTAqtaL7fD8kDKnmUoxcDlnOHbCBPjyhV7dI
 
 # Gitalk
