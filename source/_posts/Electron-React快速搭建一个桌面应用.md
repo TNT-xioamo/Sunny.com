@@ -1,6 +1,6 @@
 ---
 title: 桌面端开发
-tags: [MacOs, Win]
+tags: [React, MacOs]
 index_img: /article-img/v3.jpeg
 banner_img: /img/sdqryn.png
 categories:
@@ -21,7 +21,7 @@ mermaid: true
 
   ```js
   // 引入electron并创建一个Browserwindow
-    const {app, BrowserWindow} = require('electron')
+    const { app, BrowserWindow } = require('electron')
     const path = require('path')
     const url = require('url')
 
