@@ -128,3 +128,54 @@ mermaid: true
       track(target, key)
     }
   ```
+  
+  ## effect
+  - effect(() => state.name) 过程
+  -  初始化 fn = 包装createReactiveEffect(fn) => activeEffect
+  - fn() => 触发get => track 收集依赖
+  ```typescript
+    /**
+     * effect 包装 createReactiveEffect(fn) => activeEffect
+     * fn 具体要执行的函数
+     * options 配置项
+     **/
+    export function effect<T = any>(
+      fn: () => T,
+      options: ReactiveEffectOptions = EMPTY_OBJ
+    ): ReactiveEffect<T> {
+      // 如果fn已经是一个被effect包装过的函数，那就直接指向原始函数
+      if (isEffect(fn)) {
+        fn = fn.raw
+      }
+      /** 
+      * 创建一个包装逻辑
+      * 需要在数据获取的时候收集依赖，那就应该在执行之前，把处理逻辑赋值给reactiveEffect
+      * 当effect内部函数执行是，内部获取数据的逻辑，就可以直接添加依赖
+      **/
+      const effect = createReactiveEffect(fn, option)
+      // 判断是否需要lazy，如果不是lazy，直接执行一次
+      if (!options.lazy) {
+        effect()
+      }
+      return effect
+    }
+    // effect栈
+    const effectStack: ReactiveEffect[] = [
+      // 包装函数
+      function createReactiveEffect<T = any>(
+        fn: () => T,
+        options: ReactiveEffectOptions
+      ): ReactiveEffect<T> {
+        const effect = function reactiveEffect(): unknown {
+          // 在effect 没有激活并没有调度选项时直接执行fn
+          if(!effect.active) {
+            return option.scheduler ? undefined : fn()
+          }
+          
+        }
+      }
+    ]
+  ```
+
+
+
