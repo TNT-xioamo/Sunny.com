@@ -350,3 +350,36 @@ mermaid: true
       const recapitalize = (str: string): string => `${str.charAt(0).toLowerCase()}${str.slice(1)}`;
       recapitalize('Hello world'); // -> hello world
     ```
+
+  ## 你不知道的javascript Apis
+
+  > 1. page Visibility Api
+  这个api可以知道用户离开页面
+
+  ```js
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+       // page is visible    
+      } else {        
+        // page is hidden     
+      }
+    }); 
+  ```
+
+  > 2. web Share Api 
+  它可以让我们访问操作系统的本地共享机制，这对移动端是很友好的，不需要创建自己的分享机制
+  ```js
+    navigator.share({
+      title: '',
+      text: '',
+      url: ''
+    })
+  ```
+
+  > 3. Broadcast Channel Api
+  可以实现同源浏览器喜爱不同窗口 tab页 frame 或者 iframe 的浏览器上下文之间通讯
+  ```js
+    const bro = new BroadcastChannel('data')
+    bro.postMessage('msg')
+    bro.close()
+  ```
