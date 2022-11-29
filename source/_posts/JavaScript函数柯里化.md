@@ -93,4 +93,38 @@ mermaid: true
     clog('error')('阻塞 UI')
   ```
   ## 自动柯里化函数
+  > 既然我们要使用用柯里化，那是就可以将所用的函数改造为自动柯里化
+  > 举个例子：🌰
+  ```js
+    function add(x, y, z) {
+      return x + y + z
+    }
+    // 柯里化函数的实现myCurrying
+    function myCurrying(fn) {
+      function curried(...args) {
+        // 先进行判断当前已经接收的参数的个数，可以参数本身需要接受的参数是否已经一致了
+        // 当已经传入的参数 大于等于 需要的参数时, 就执行函数
+        if (args.length >= fn.length) {
+          return fn.apply(this, args)
+        } else {
+          function curriedTow(...args2) {
+            return curried.apply(this, args.concat(args2))
+          }
+          return curriedTow
+        }
+      }
+      return  return curried
+    }
+    var curryAdd = myCurrying(add)
+    console.dir(curryAdd(10, 20, 30))
+    console.dir(curryAdd(10, 20)(30))
+    console.dir(curryAdd(10)(20)(30))
+  ```
+
+  ## 组合函数
+  > Compose 函数是在JavaScript开发过程中一种对函数的使用技巧、模式：
+  ```js
+
+  ```
+
 
