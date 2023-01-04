@@ -9,7 +9,7 @@ date: 2022-12-16
   <!--more-->
 # 直接上代码
 
-```js
+```vue
 <template>
   <div>
     <div class="input-number-range" :class="{ 'is-disabled': disabled }">
