@@ -18,7 +18,7 @@ mermaid: true
 
   ```js
     const count = ref(1)
-    const numb = computed(() => count.value *2) // count.value改变它才会重新计算
+    const numb = computed(() => count.value * 2) // count.value改变它才会重新计算
     console.log(numb.value) // 2
     count.value = 2
     console.log(numb.value) // 4
