@@ -6,7 +6,8 @@ tags: [About]
 ---
 <!-- https://www.cnblogs.com/tfxz/ 超级小白龙 -->
 <!-- https://www.cnblogs.com/bndong/ bndong -->
-### 👋 &nbsp; <font color=#8bccf9> 写给 Stark </font>
+### 👋 &nbsp; <font color=#8bccf9> 写给 Stark </font> 
+  >(耳机就是人潮拥挤时的屏蔽器和宇宙浪漫的连接器)
 
 🫠 &nbsp; <font color=#9290f1> 很多人曾问我，搭建这么一个博客有何作用？只是为了在像宇宙般浩瀚的互联网上留下一点属于自己的足迹？
           确实，我是抱着这么一种心态来搭建这个博客的，也许不会有多少人进入到这个博客，也许这个博客不会传播多少有用的知识,
